@@ -92,20 +92,10 @@ function tryPlay() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+    // --- Music Logic ---
     const audio = document.getElementById('bgm');
     const btn = document.getElementById('music-toggle');
-
-    // Initial state check
-    if (audio.paused) {
-        btn.innerText = '▶';
-        btn.classList.add('paused');
-        btn.style.paddingLeft = '5px';
-    } else {
-        btn.innerText = '⏸';
-        btn.classList.remove('paused');
-        btn.style.paddingLeft = '0';
-    }
+    const musicTooltip = document.getElementById('music-tooltip');
 
     btn.addEventListener('click', () => {
         if (audio.paused) {
@@ -113,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.innerText = '⏸';
             btn.classList.remove('paused');
             btn.style.paddingLeft = '0';
+            if (musicTooltip) musicTooltip.style.display = 'none'; // Hide tooltip on play
         } else {
             audio.pause();
             btn.innerText = '▶';
@@ -120,8 +111,30 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.style.paddingLeft = '5px';
         }
     });
+
+    // --- Lightbox Logic ---
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeLightbox = document.querySelector('.close-lightbox');
+
+    // Add click events to all memory photos
+    document.querySelectorAll('.photo-inner img').forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', (e) => {
+            lightbox.style.display = 'flex';
+            lightboxImg.src = e.target.src;
+        });
+    });
+
+    // Close lightbox on click (close button or background)
+    lightbox.addEventListener('click', (e) => {
+        if (e.target !== lightboxImg) {
+            lightbox.style.display = 'none';
+        }
+    });
 });
 
-window.addEventListener('load', tryPlay);
-document.addEventListener('click', tryPlay, { once: true });
-document.addEventListener('touchstart', tryPlay, { once: true });
+// Remove tryPlay listeners at the end of the file as requested (no autoplay)
+// window.addEventListener('load', tryPlay);
+// document.addEventListener('click', tryPlay, { once: true });
+// document.addEventListener('touchstart', tryPlay, { once: true });

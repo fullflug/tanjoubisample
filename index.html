@@ -128,8 +128,17 @@
         お使いのブラウザは audio タグをサポートしていません。
     </audio>
 
-    <!-- Music Toggle Button -->
-    <button id="music-toggle" class="music-btn" aria-label="Toggle Music">▶</button>
+    <!-- Music Toggle Button with Tooltip -->
+    <div class="music-container">
+        <div id="music-tooltip" class="music-tooltip">音楽がなるよ！</div>
+        <button id="music-toggle" class="music-btn" aria-label="Toggle Music">▶</button>
+    </div>
+
+    <!-- Lightbox for Album Photos -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
 
     <footer class="footer">
         <p>© 2026 Happy Birthday Mio</p>
