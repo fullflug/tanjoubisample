@@ -140,10 +140,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close lightbox on click (background only, not the card itself)
     lightbox.addEventListener('click', (e) => {
         if (e.target === lightbox || e.target.classList.contains('close-lightbox')) {
-            lightbox.style.display = 'none';
-            lightboxContainer.innerHTML = '';
+            closeLightboxAction();
         }
     });
+
+    // Close on scroll
+    window.addEventListener('scroll', () => {
+        if (lightbox.style.display === 'flex') {
+            closeLightboxAction();
+        }
+    }, { passive: true });
+
+    function closeLightboxAction() {
+        lightbox.style.display = 'none';
+        lightboxContainer.innerHTML = '';
+    }
 });
 
 // Remove tryPlay listeners at the end of the file as requested (no autoplay)
