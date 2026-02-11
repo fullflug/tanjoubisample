@@ -718,11 +718,13 @@ body {
 /* Responsive */
 @media (max-width: 600px) {
     .main-title {
-        font-size: 2.5rem;
+        font-size: 8vw;
+        white-space: nowrap !important;
     }
 
     .name {
-        font-size: 3.5rem;
+        font-size: 12vw;
+        white-space: nowrap !important;
     }
 
     .frame-container {

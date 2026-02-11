@@ -92,6 +92,7 @@ function tryPlay() {
     }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
     // --- Music Logic ---
     const audio = document.getElementById('bgm');
     const btn = document.getElementById('music-toggle');
@@ -115,7 +116,6 @@ function tryPlay() {
     // --- Lightbox Logic ---
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    const closeLightbox = document.querySelector('.close-lightbox');
 
     // Add click events to all memory photos
     document.querySelectorAll('.photo-inner img').forEach(img => {
