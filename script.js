@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Intro Logic ---
+    const introOverlay = document.getElementById('intro-overlay');
+    if (introOverlay) {
+        const dismissIntro = () => {
+            introOverlay.classList.add('fade-out');
+            setTimeout(() => {
+                introOverlay.remove();
+            }, 1000);
+        };
+        introOverlay.addEventListener('click', dismissIntro);
+        // Auto-dismiss after 8 seconds if not clicked
+        setTimeout(dismissIntro, 8000);
+    }
+
     // Entrance Animation
     const hero = document.getElementById('hero');
     hero.style.opacity = '0';

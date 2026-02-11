@@ -3,13 +3,158 @@
     /* More saturated pink */
     --text-main: #5d4037;
     /* Brown for text */
-    --accent-pink: #ff5c8d;
-    /* More vibrant accent */
-    --accent-hot-pink: #ff006e;
-    /* Vivid Hot Pink */
+    --bg-pink: #fce4ec;
+    --accent-pink: #f8bbd0;
+    --accent-hot-pink: #ff85a2;
+    --text-black: #333;
     --border-color: #ffb7c5;
-    --font-jp: 'Zen Old Mincho', serif;
-    --font-en: 'Pinyon Script', cursive;
+    --font-jp: 'Sawarabi Mincho', serif;
+    --font-en: 'Zen Old Mincho', serif;
+}
+
+/* Intro Overlay */
+.intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease, visibility 1s;
+    overflow: hidden;
+}
+
+.intro-overlay.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.intro-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    padding: 20px;
+}
+
+.cake-container {
+    position: relative;
+    width: min(400px, 80vw);
+    animation: cakeAppear 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes cakeAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.intro-cake {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(255, 133, 162, 0.4));
+}
+
+.message-card {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 15px 25px;
+    border: 2px solid var(--accent-hot-pink);
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    animation: cardReveal 1s ease-out 1.2s forwards;
+    opacity: 0;
+}
+
+@keyframes cardReveal {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.message-card p {
+    margin: 3px 0;
+    color: var(--text-black);
+}
+
+.card-title {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--accent-hot-pink) !important;
+}
+
+.card-name {
+    font-size: 1.5rem;
+    font-family: var(--font-en);
+    font-weight: 900;
+}
+
+.card-date {
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+.intro-instruction {
+    color: #fff;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    animation: blink 2s infinite;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 2.5s forwards, blink 2s infinite 2.5s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Mobile Adjustments for Intro */
+@media (max-width: 600px) {
+    .message-card {
+        padding: 10px 15px;
+    }
+
+    .card-name {
+        font-size: 1.2rem;
+    }
 }
 
 * {
