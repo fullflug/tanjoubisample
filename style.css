@@ -563,13 +563,16 @@ body {
 }
 
 .music-btn {
-    width: 70px;
-    height: 70px;
+    width: 55px;
+    /* Reduced from 70px */
+    height: 55px;
+    /* Reduced from 70px */
     border-radius: 50%;
     background: var(--accent-hot-pink);
     color: #fff;
     border: 3px solid #fff;
-    font-size: 30px;
+    font-size: 24px;
+    /* Slightly smaller icon */
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s, background 0.3s;
@@ -581,16 +584,19 @@ body {
 
 .music-tooltip {
     position: absolute;
-    bottom: 80px;
-    right: 5px;
+    bottom: 65px;
+    /* Adjusted position for smaller button */
+    right: 0;
     background: #fff;
     color: var(--accent-hot-pink);
-    padding: 3px 8px;
-    border-radius: 12px;
-    font-size: 0.6rem;
+    padding: 6px 12px;
+    /* Slightly larger padding */
+    border-radius: 15px;
+    font-size: 0.8rem;
+    /* Increased size back to readable level */
     font-weight: bold;
     white-space: nowrap;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     animation: floatTooltip 3s ease-in-out infinite;
     border: 1.5px solid var(--accent-hot-pink);
 }
@@ -598,9 +604,9 @@ body {
 .music-tooltip::after {
     content: '';
     position: absolute;
-    bottom: -6px;
+    bottom: -8px;
     right: 20px;
-    border-width: 6px 6px 0;
+    border-width: 8px 8px 0;
     border-style: solid;
     border-color: #fff transparent transparent;
 }
