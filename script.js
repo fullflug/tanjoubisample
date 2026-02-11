@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Intro Logic ---
     const introOverlay = document.getElementById('intro-overlay');
+
     if (introOverlay) {
         const dismissIntro = () => {
             introOverlay.classList.add('fade-out');
             setTimeout(() => {
-                introOverlay.remove();
+                introOverlay.style.display = 'none';
             }, 1000);
         };
         introOverlay.addEventListener('click', dismissIntro);
