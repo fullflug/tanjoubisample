@@ -115,21 +115,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Lightbox Logic ---
     const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxContainer = document.getElementById('lightbox-container');
 
-    // Add click events to all memory photos
-    document.querySelectorAll('.photo-inner img').forEach(img => {
-        img.style.cursor = 'zoom-in';
-        img.addEventListener('click', (e) => {
+    // Add click events to all memory cards
+    document.querySelectorAll('.photo-card').forEach(card => {
+        card.style.cursor = 'zoom-in';
+        card.addEventListener('click', () => {
             lightbox.style.display = 'flex';
-            lightboxImg.src = e.target.src;
+            lightboxContainer.innerHTML = ''; // Clear previous content
+
+            // Clone the card
+            const clonedCard = card.cloneNode(true);
+
+            // Remove skews and adjust for lightbox
+            clonedCard.classList.remove('skew-left', 'skew-right', 'skew-center');
+            clonedCard.style.transform = 'none';
+            clonedCard.style.margin = '0';
+            clonedCard.style.cursor = 'default';
+
+            lightboxContainer.appendChild(clonedCard);
         });
     });
 
-    // Close lightbox on click (close button or background)
+    // Close lightbox on click (background only, not the card itself)
     lightbox.addEventListener('click', (e) => {
-        if (e.target !== lightboxImg) {
+        if (e.target === lightbox || e.target.classList.contains('close-lightbox')) {
             lightbox.style.display = 'none';
+            lightboxContainer.innerHTML = '';
         }
     });
 });

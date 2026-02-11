@@ -629,29 +629,49 @@ body {
     /* Adjust for Play icon */
 }
 
-/* Lightbox */
+/* Lightbox Overlay */
 .lightbox {
     display: none;
     position: fixed;
     z-index: 2000;
-    padding-top: 50px;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
     background-color: rgba(0, 0, 0, 0.9);
     cursor: pointer;
+    overflow-y: auto;
+    padding: 40px 20px;
 }
 
-.lightbox-content {
+.lightbox-content-container {
     margin: auto;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 90%;
     max-height: 80vh;
-    border: 5px solid #fff;
-    border-radius: 10px;
-    animation: zoomIn 0.3s;
+    animation: zoomIn 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.lightbox-content-container .photo-card {
+    width: min(400px, 80vw);
+    background: #fff;
+    padding: 15px;
+    padding-bottom: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    border: none;
+}
+
+.lightbox-content-container .photo-inner {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.lightbox-content-container .photo-inner img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 @keyframes zoomIn {
