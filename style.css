@@ -39,14 +39,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
     width: 100%;
     padding: 20px;
 }
 
 .cake-container {
     position: relative;
-    width: min(400px, 80vw);
+    width: 250px;
+    height: 250px;
     animation: cakeAppear 1.5s ease-out forwards;
     opacity: 0;
 }
@@ -63,25 +64,143 @@
     }
 }
 
-.intro-cake {
-    width: 100%;
-    height: auto;
-    filter: drop-shadow(0 0 20px rgba(255, 133, 162, 0.4));
+/* --- CSS CAKE --- */
+.cake {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
 }
 
+.plate {
+    width: 200px;
+    height: 15px;
+    background: #eee;
+    position: absolute;
+    bottom: -10px;
+    left: -25px;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.layer {
+    position: absolute;
+    width: 150px;
+    background: #fff;
+    border-radius: 10px 10px 0 0;
+}
+
+.layer-bottom {
+    bottom: 0;
+    height: 40px;
+    background: #fff;
+}
+
+.layer-middle {
+    bottom: 35px;
+    height: 35px;
+    width: 130px;
+    left: 10px;
+    background: #fff;
+}
+
+.layer-top {
+    bottom: 65px;
+    height: 30px;
+    width: 110px;
+    left: 20px;
+    background: #fff;
+}
+
+.icing {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: 95px;
+    background: #fff;
+    border-radius: 10px 10px 0 0;
+    box-shadow: inset 0 -5px 10px rgba(255, 182, 193, 0.3);
+}
+
+.drip {
+    position: absolute;
+    width: 15px;
+    height: 25px;
+    background: #fff;
+    border-radius: 0 0 10px 10px;
+    top: 40px;
+}
+
+.drip1 {
+    left: 10px;
+    height: 35px;
+    transform: scaleX(1.2);
+}
+
+.drip2 {
+    left: 60px;
+    height: 45px;
+}
+
+.drip3 {
+    left: 110px;
+    height: 30px;
+    transform: scaleX(0.8);
+}
+
+.candle {
+    position: absolute;
+    background: var(--accent-hot-pink);
+    width: 8px;
+    height: 35px;
+    left: 50%;
+    bottom: 95px;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.flame {
+    position: absolute;
+    background: orange;
+    width: 12px;
+    height: 20px;
+    left: 50%;
+    top: -22px;
+    transform: translateX(-50%);
+    border-radius: 50% 50% 20% 20%;
+    box-shadow: 0 0 15px orange;
+    animation: flicker 0.1s infinite alternate;
+}
+
+@keyframes flicker {
+    from {
+        transform: translateX(-50%) scale(1);
+        opacity: 0.8;
+    }
+
+    to {
+        transform: translateX(-50%) scale(1.1);
+        opacity: 1;
+    }
+}
+
+/* --- MESSAGE CARD --- */
 .message-card {
     position: absolute;
-    bottom: 10%;
+    bottom: -30px;
     left: 50%;
     transform: translateX(-50%);
     background: #fff;
-    padding: 15px 25px;
-    border: 2px solid var(--accent-hot-pink);
-    border-radius: 5px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    width: 80%;
+    padding: 10px 20px;
+    border: 2.5px solid var(--accent-hot-pink);
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    width: 220px;
     animation: cardReveal 1s ease-out 1.2s forwards;
     opacity: 0;
+    z-index: 10;
 }
 
 @keyframes cardReveal {
@@ -97,35 +216,34 @@
 }
 
 .message-card p {
-    margin: 3px 0;
+    margin: 2px 0;
     color: var(--text-black);
 }
 
 .card-title {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     font-weight: bold;
     color: var(--accent-hot-pink) !important;
 }
 
 .card-name {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-family: var(--font-en);
     font-weight: 900;
 }
 
 .card-date {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     opacity: 0.7;
 }
 
 .intro-instruction {
     color: #fff;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    animation: blink 2s infinite;
-    margin-top: 20px;
-    opacity: 0;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
     animation: fadeIn 1s ease-out 2.5s forwards, blink 2s infinite 2.5s;
+    opacity: 0;
+    margin-top: 20px;
 }
 
 @keyframes fadeIn {
@@ -148,12 +266,43 @@
 
 /* Mobile Adjustments for Intro */
 @media (max-width: 600px) {
+    .cake-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .cake {
+        width: 120px;
+    }
+
+    .plate {
+        width: 160px;
+        left: -20px;
+    }
+
+    .layer,
+    .icing {
+        width: 120px;
+    }
+
+    .layer-middle {
+        width: 100px;
+        left: 10px;
+    }
+
+    .layer-top {
+        width: 80px;
+        left: 20px;
+    }
+
     .message-card {
-        padding: 10px 15px;
+        width: 180px;
+        bottom: -20px;
+        padding: 8px 15px;
     }
 
     .card-name {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 }
 
