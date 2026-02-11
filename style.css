@@ -354,6 +354,7 @@ body {
     font-size: 3.5rem;
     line-height: 1.2;
     margin-bottom: 0;
+    white-space: nowrap;
 }
 
 .name {
@@ -363,6 +364,7 @@ body {
     text-shadow: 2px 2px 0px #fff;
     margin-top: -10px;
     margin-bottom: 20px;
+    white-space: nowrap;
 }
 
 .main-image-container {
@@ -456,10 +458,7 @@ body {
 }
 
 .section-title::after {
-    content: '♡';
-    display: block;
-    font-size: 1rem;
-    margin-top: -10px;
+    display: none;
 }
 
 /* Frame / Message Box */
