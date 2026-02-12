@@ -72,4 +72,3 @@ if (lightbox && lightboxContainer) {
         }
     }, { passive: true });
 }
-});

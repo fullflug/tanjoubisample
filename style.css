@@ -188,173 +188,67 @@ body {
 /* Hero Section */
 .hero-section {
     min-height: 100vh;
-    /* Changed from fixed height to min-height */
-    height: auto;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     text-align: center;
     position: relative;
     padding: 50px 0 20px 0;
 }
 
-.sub-title {
-    font-family: var(--font-en);
-    font-size: 1.5rem;
-    color: var(--accent-pink);
-    margin-bottom: 10px;
-}
-
-.main-title {
-    font-family: var(--font-en);
-    font-size: 3.5rem;
-    line-height: 1.2;
-    margin-bottom: 0;
-    white-space: nowrap;
-}
-
-/* Sweets & Chocolate Decoration */
-.hero-content.sweets-decoration {
-    position: relative;
-    padding: 80px 20px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.3) 100%);
-    border-radius: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    width: 95%;
+.hero-image-container {
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
-    border: 4px solid #fff;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.2));
+    animation: fadeIn 1.5s ease-out;
 }
 
-.sweets-item {
-    display: none;
-}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 
-.chocolate-layout {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    width: 100%;
-}
-
-.chocolate-plate {
-    background: linear-gradient(135deg, #5d4037, #3e2723);
-    color: #fff8e1;
-    border: 3px solid #2d1a12;
-    padding: 12px 30px;
-    border-radius: 12px;
-    box-shadow:
-        inset 2px 2px 0 rgba(255, 255, 255, 0.1),
-        inset -2px -2px 0 rgba(0, 0, 0, 0.4),
-        0 8px 25px rgba(0, 0, 0, 0.6);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), 0 0 5px rgba(255, 255, 255, 0.2);
-    display: inline-block;
-    max-width: 100%;
-    word-break: keep-all;
-    text-align: center;
-}
-
-.main-title.chocolate-plate {
-    font-size: clamp(1.5rem, 5vw, 2.8rem);
-    font-family: var(--font-jp);
-    font-weight: 900;
-    transform: rotate(1deg);
-    line-height: 1.2;
-}
-
-.name.chocolate-plate {
-    font-size: clamp(2rem, 8vw, 3.5rem);
-    font-family: var(--font-jp);
-    font-weight: 900;
-    transform: rotate(-1.5deg);
-    margin-top: -5px;
-}
-
-.name {
-    font-family: var(--font-en);
-    font-size: 5rem;
-    color: var(--accent-hot-pink);
-    text-shadow: 2px 2px 0px #fff;
-    margin-top: -10px;
-    margin-bottom: 20px;
-    white-space: nowrap;
-}
-
-.main-image-container {
-    width: 100%;
-    max-width: 400px;
-    margin: 20px auto;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(255, 64, 129, 0.3);
-    border: 5px solid #fff;
-}
-
-.main-visual {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.glitch:hover {
-    animation: glitch 0.3s infinite;
-}
-
-.date-badge {
-    background: linear-gradient(135deg, #5d4037, #3e2723);
-    /* Dark chocolate */
-    border: 3px solid #2d1a12;
-    color: #fff8e1;
-    /* Cream icing color */
-    padding: 12px 45px;
-    border-radius: 8px;
-    /* Plaque shape */
-    font-family: 'Pinyon Script', cursive;
-    /* Elegance for "writing" */
-    font-size: 2rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    display: inline-block;
-    margin-top: 15px;
-    box-shadow:
-        inset 2px 2px 0 rgba(255, 255, 255, 0.1),
-        inset -2px -2px 0 rgba(0, 0, 0, 0.4),
-        0 8px 20px rgba(0, 0, 0, 0.5);
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-    transform: rotate(-1deg);
-    /* Subtle natural tilt */
-}
-
-/* Mobile Adjustments for Date Badge */
-@media (max-width: 600px) {
-    .date-badge {
-        font-size: 1.4rem;
-        padding: 8px 25px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
+.hero-visual-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+}
 
-/* Content Sections */
-.content-section {
-    margin: 20px 0 80px 0;
-    /* Reduced top margin from 80px to 20px */
-    text-align: center;
+/* Section Title Container (Chocolate Plate) */
+.section-title-container {
+    background-image: url('choco_plate.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 280px;
+    height: 180px;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
 }
 
 .section-title {
     font-family: var(--font-en);
-    font-size: 2.5rem;
-    color: var(--accent-pink);
-    margin-bottom: 30px;
-    position: relative;
-    display: inline-block;
+    font-size: 2.2rem;
+    color: #fff8e1;
+    /* Cream color for readability on chocolate */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px !important;
+    /* Offset for the plate's shape if needed */
+    padding-bottom: 25px;
+    /* Adjusting text position within the plate */
+    font-weight: bold;
 }
 
 .section-title::after {
