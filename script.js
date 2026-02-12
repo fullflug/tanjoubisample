@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Entrance Animation ---
+    // --- Hero Animation ---
     const hero = document.getElementById('hero');
+    const audio = document.getElementById('bgm');
+    const btn = document.getElementById('music-toggle');
+    const musicTooltip = document.getElementById('music-tooltip');
+    const introOverlay = document.getElementById('intro-overlay');
+
     if (hero) {
         hero.style.opacity = '0';
         hero.animate([
@@ -13,11 +18,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Music Logic ---
-    const audio = document.getElementById('bgm');
-    const btn = document.getElementById('music-toggle');
-    const musicTooltip = document.getElementById('music-tooltip');
+    // --- Intro Overlay Logic ---
+    if (introOverlay) {
+        introOverlay.addEventListener('click', () => {
+            introOverlay.classList.add('fade-out');
+            // Play music automatically if user interacts by clicking intro
+            if (audio && audio.paused) {
+                audio.play();
+                if (btn) {
+                    btn.innerText = '⏸';
+                    btn.classList.remove('paused');
+                    btn.style.paddingLeft = '0';
+                }
+                if (musicTooltip) musicTooltip.style.display = 'none';
+            }
+        });
+    }
 
+    // --- Music Logic (Manual Toggle) ---
     if (audio && btn) {
         btn.addEventListener('click', () => {
             if (audio.paused) {
