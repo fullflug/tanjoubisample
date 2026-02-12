@@ -68,66 +68,17 @@ body {
 }
 
 /* Lace Edge for TL (using radial gradient on ::after) */
-.bg-corner-tl::after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
+.bg-container {
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 20px;
-    background-image: radial-gradient(circle at 10px 0, #333 10px, transparent 11px);
-    background-size: 20px 20px;
-    background-repeat: repeat-x;
-}
-
-/* 3. Bottom-Right Dark Corner with Lace */
-.bg-corner-br {
-    position: absolute;
-    bottom: -150px;
-    right: -100px;
-    width: 500px;
-    height: 300px;
-    background: #333;
-    transform: rotate(-35deg);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.bg-corner-br::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: 0;
-    width: 100%;
-    height: 20px;
-    background-image: radial-gradient(circle at 10px 20px, #333 10px, transparent 11px);
-    background-size: 20px 20px;
-    background-repeat: repeat-x;
-}
-
-/* 4. Pink Ribbon (Top Left) */
-.bg-ribbon-pink {
-    position: absolute;
-    top: 50px;
-    left: -100px;
-    width: 700px;
-    height: 40px;
-    background: #ff8da1;
-    transform: rotate(-35deg);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border-top: 2px dashed rgba(255, 255, 255, 0.7);
-    border-bottom: 2px dashed rgba(255, 255, 255, 0.7);
-    /* Make ribbon intersect nicely */
-}
-
-/* Decorate the ribbon with a bow if possible, or keep simple strip */
-.bg-ribbon-pink::after {
-    content: '🎀';
-    /* Simple emoji decoration floating */
-    position: absolute;
-    top: 5px;
-    left: 50%;
-    font-size: 30px;
-    transform: rotate(35deg);
+    height: 100%;
+    z-index: -2;
+    background-image: url('background_theme.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* --- Scattered Decorations --- */
