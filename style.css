@@ -225,12 +225,13 @@ body {
 
 /* Section Title Container (Chocolate Plate) */
 .section-title-container {
-    background-image: url('choco_plate.png');
+    background-image: url('文字フレーム.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     width: 280px;
-    height: 180px;
+    height: 150px;
+    /* Adjusted height for the frame */
     margin: 0 auto 10px;
     display: flex;
     align-items: center;
@@ -244,11 +245,26 @@ body {
     color: #fff8e1;
     /* Cream color for readability on chocolate */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 30px !important;
-    /* Offset for the plate's shape if needed */
-    padding-bottom: 25px;
-    /* Adjusting text position within the plate */
+    margin-bottom: 20px !important;
+    padding-bottom: 15px;
+    /* Adjusting text position within the frame */
     font-weight: bold;
+}
+
+.main-image-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(255, 64, 129, 0.3);
+    border: 5px solid #fff;
+}
+
+.main-visual {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .section-title::after {
