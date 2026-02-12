@@ -243,8 +243,8 @@ body {
 
 .section-title {
     font-family: var(--font-en);
-    font-size: 1.8rem;
-    /* Final reduction to 1.8rem */
+    font-size: 1.4rem;
+    /* Further reduced from 1.8rem */
     color: #fff8e1;
     /* Cream color for readability on chocolate */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
