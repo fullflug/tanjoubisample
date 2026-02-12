@@ -229,12 +229,10 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 340px;
-    /* Reduced further to 340px */
-    height: 160px;
-    /* Reduced further to 160px */
-    margin: 0 auto 10px;
-    /* Adjusted margin */
+    width: 90%;
+    max-width: 320px;
+    height: 140px;
+    margin: 0 auto 20px;
     display: flex;
     align-items: center;
     justify-content: center;
