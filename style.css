@@ -214,9 +214,10 @@ body {
     /* Ensure title and ornaments aren't clipped */
 }
 
-/* Ribbon Ornament */
+/* Ribbon Ornament (Base) */
 .hero-image-container::before {
-    content: 'Happy Birthday';
+    content: '';
+    /* Removed static text */
     position: absolute;
     top: -30px;
     left: 50%;
@@ -224,8 +225,9 @@ body {
     background: var(--accent-hot-pink);
     color: #fff;
     padding: 5px 30px;
-    font-family: 'Pinyon Script', cursive;
-    font-size: 1.8rem;
+    height: 40px;
+    /* Added height for the base */
+    min-width: 250px;
     z-index: 5;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 30px;
@@ -234,48 +236,44 @@ body {
     opacity: 0.9;
 }
 
-/* New: Animated Hero Title Overlay */
+/* New: Animated Hero Title Overlay (Relocated to top) */
 .hero-title {
     position: absolute;
-    top: 50%;
+    top: -36px;
+    /* Positioned over the ribbon ornament */
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
+    transform: translateX(-50%);
+    width: auto;
     font-family: 'Pinyon Script', cursive;
-    font-size: 6rem;
-    /* Large font size */
+    font-size: 2.8rem;
+    /* Adjusted size for ribbon area */
     color: #fff;
     text-shadow:
-        0 0 10px #ff69b4,
-        0 0 20px #ff69b4,
-        0 0 30px #ff1493,
-        0 0 40px #ff1493;
+        0 0 10px rgba(255, 105, 180, 0.8),
+        0 0 20px rgba(255, 20, 147, 0.6);
     z-index: 10;
     pointer-events: none;
     margin: 0;
+    white-space: nowrap;
     animation: sparkle 2s infinite alternate ease-in-out, heroTitleFadeIn 2s ease-out;
 }
 
 @keyframes sparkle {
     0% {
         text-shadow:
-            0 0 10px #ff69b4,
-            0 0 20px #ff69b4,
-            0 0 30px #ff1493,
-            0 0 40px #ff1493;
-        transform: translate(-50%, -50%) scale(1);
+            0 0 10px rgba(255, 105, 180, 0.8),
+            0 0 20px rgba(255, 20, 147, 0.6);
+        transform: translateX(-50%) scale(1);
         filter: brightness(1);
     }
 
     100% {
         text-shadow:
-            0 0 20px #ff69b4,
-            0 0 40px #ff69b4,
-            0 0 60px #ff1493,
-            0 0 80px #ff1493,
-            0 0 100px #ff1493;
-        transform: translate(-50%, -50%) scale(1.05);
-        filter: brightness(1.2) contrast(1.2);
+            0 0 15px rgba(255, 105, 180, 1),
+            0 0 30px rgba(255, 20, 147, 0.8),
+            0 0 45px rgba(255, 105, 180, 0.6);
+        transform: translateX(-50%) scale(1.1);
+        filter: brightness(1.3);
     }
 }
 
