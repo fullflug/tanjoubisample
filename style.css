@@ -200,8 +200,50 @@ body {
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
-    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.2));
+    position: relative;
+    background: #fff;
+    padding: 15px;
+    border: 5px solid #fff;
+    box-shadow:
+        0 20px 50px rgba(255, 133, 162, 0.3),
+        0 0 0 8px var(--accent-hot-pink),
+        0 0 0 12px #fff;
     animation: fadeIn 1.5s ease-out;
+    border-radius: 4px;
+}
+
+/* Ribbon Ornament */
+.hero-image-container::before {
+    content: 'Happy Birthday';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-hot-pink);
+    color: #fff;
+    padding: 5px 30px;
+    font-family: 'Pinyon Script', cursive;
+    font-size: 1.8rem;
+    z-index: 5;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    border: 2px solid #fff;
+    white-space: nowrap;
+}
+
+/* Ribbon tails */
+.hero-image-container::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 40px;
+    background: var(--accent-hot-pink);
+    z-index: 4;
+    clip-path: polygon(10% 0, 90% 0, 100% 100%, 90% 70%, 50% 100%, 10% 70%, 0 100%);
+    opacity: 0.8;
 }
 
 @keyframes fadeIn {
