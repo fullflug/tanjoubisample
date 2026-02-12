@@ -18,6 +18,15 @@
     <!-- Intro Overlay -->
     <div id="intro-overlay" class="intro-overlay">
         <div class="intro-content">
+            <!-- SVG Filter to remove white background -->
+            <svg width="0" height="0" style="position: absolute;">
+                <filter id="remove-bg">
+                    <feColorMatrix type="matrix" values="1 0 0 0 0
+                                                         0 1 0 0 0
+                                                         0 0 1 0 0
+                                                         -1 -1 -1 1 2.9" />
+                </filter>
+            </svg>
             <div class="intro-cake-container">
                 <img src="intro_cake.jpg" alt="Birthday Cake" class="intro-cake-img">
             </div>

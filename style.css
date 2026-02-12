@@ -71,7 +71,7 @@
 .intro-cake-img {
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 10px 30px rgba(255, 133, 162, 0.4));
+    filter: url(#remove-bg) drop-shadow(0 10px 30px rgba(255, 133, 162, 0.4));
     animation: floatCake 4s ease-in-out infinite;
 }
 
