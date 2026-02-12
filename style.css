@@ -36,8 +36,8 @@ body {
     height: 100%;
     z-index: -2;
     background-image: url('background_theme.png');
-    background-size: cover;
-    background-position: center;
+    background-size: 100% 100%;
+    background-position: top center;
     background-repeat: no-repeat;
     pointer-events: none;
 }
