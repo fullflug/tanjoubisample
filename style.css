@@ -230,6 +230,77 @@ body {
     white-space: nowrap;
 }
 
+/* Sweets & Chocolate Decoration */
+.hero-content.sweets-decoration {
+    position: relative;
+    padding: 60px 40px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.1) 70%);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Cream Decos around the plate area */
+.hero-content.sweets-decoration::before {
+    content: '☁️';
+    /* Representing cream dollops */
+    position: absolute;
+    top: 10px;
+    left: 20%;
+    font-size: 2.5rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    animation: float 3s ease-in-out infinite;
+}
+
+.hero-content.sweets-decoration::after {
+    content: '🍓';
+    position: absolute;
+    bottom: 20px;
+    right: 15%;
+    font-size: 2.5rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    animation: float 4s ease-in-out infinite reverse;
+}
+
+.chocolate-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.chocolate-plate {
+    background: linear-gradient(135deg, #5d4037, #3e2723);
+    color: #fff8e1;
+    border: 3px solid #2d1a12;
+    padding: 15px 40px;
+    border-radius: 12px;
+    box-shadow:
+        inset 2px 2px 0 rgba(255, 255, 255, 0.1),
+        inset -2px -2px 0 rgba(0, 0, 0, 0.4),
+        0 8px 25px rgba(0, 0, 0, 0.6);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), 0 0 5px rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    width: fit-content;
+}
+
+.main-title.chocolate-plate {
+    font-size: 2.8rem;
+    font-family: var(--font-jp);
+    font-weight: 900;
+    transform: rotate(1deg);
+}
+
+.name.chocolate-plate {
+    font-size: 3.5rem;
+    font-family: var(--font-jp);
+    font-weight: 900;
+    transform: rotate(-1.5deg);
+    margin-top: -10px;
+}
+
 .name {
     font-family: var(--font-en);
     font-size: 5rem;
