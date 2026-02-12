@@ -219,23 +219,22 @@ body {
     content: '';
     /* Removed static text */
     position: absolute;
-    top: -50px;
-    /* Increased from -30px */
+    top: -60px;
+    /* Increased to accommodate larger text */
     left: 50%;
     transform: translateX(-50%);
     background: var(--accent-hot-pink);
     color: #fff;
-    padding: 5px 40px;
-    height: 60px;
-    /* Increased from 40px */
-    /* Added height for the base */
-    width: 90%;
-    /* Added relative width */
-    max-width: 350px;
-    /* Increased from 250px */
+    padding: 8px 50px;
+    height: 75px;
+    /* Increased height for larger text */
+    width: 92%;
+    /* Slightly wider */
+    max-width: 450px;
+    /* Increased from 350px */
     z-index: 5;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 40px;
+    border-radius: 45px;
     /* Adjusted radius */
     border: 3px solid #fff;
     /* Slightly thicker border */
@@ -246,16 +245,16 @@ body {
 /* Hero Title Overlay (Static, scaled to fit ribbon base) */
 .hero-title {
     position: absolute;
-    top: -46px;
+    top: -54px;
     /* Adjusted to center in larger ribbon */
     left: 50%;
     transform: translateX(-50%);
     width: auto;
     font-family: 'Pinyon Script', cursive;
-    font-size: 2.4rem;
-    /* Scaled up from 1.6rem */
+    font-size: 3.2rem;
+    /* Increased from 2.4rem for more impact */
     color: #fff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     z-index: 10;
     pointer-events: none;
     margin: 0;
@@ -297,19 +296,21 @@ body {
 /* Mobile Adjustments for Ribbon */
 @media screen and (max-width: 480px) {
     .hero-image-container::before {
-        top: -35px;
-        height: 45px;
-        padding: 5px 20px;
+        top: -45px;
+        height: 60px;
+        padding: 8px 30px;
+        max-width: 85%;
     }
 
     .hero-image-container::after {
-        top: -18px;
-        height: 45px;
+        top: -25px;
+        height: 60px;
     }
 
     .hero-title {
-        top: -32px;
-        font-size: 1.6rem;
+        top: -40px;
+        font-size: 2.6rem;
+        /* Increased from 1.6rem for more impact on mobile */
     }
 }
 
