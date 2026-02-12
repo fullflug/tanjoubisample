@@ -44,12 +44,19 @@
     padding: 20px;
 }
 
-@keyframes cakeAppear {
-    from {
-        opacity: 0;
-        transform: translateY(30px) scale(0.9);
-    }
+/* --- INTRO CAKE (IMAGE BASED) --- */
+.intro-cake-container {
+    position: relative;
+    width: min(400px, 85vw);
+    animation: cakeAppear 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
 
+@keyframes cakeAppear {
     from {
         opacity: 0;
         transform: translateY(40px) scale(0.9);
