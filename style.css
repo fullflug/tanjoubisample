@@ -261,16 +261,36 @@ body {
 }
 
 .date-badge {
-    border: 2px solid var(--accent-pink);
-    padding: 8px 30px;
-    border-radius: 50px;
-    font-size: 1.5rem;
-    /* Increased size */
+    background: linear-gradient(135deg, #5d4037, #3e2723);
+    /* Dark chocolate */
+    border: 3px solid #2d1a12;
+    color: #fff8e1;
+    /* Cream icing color */
+    padding: 12px 45px;
+    border-radius: 8px;
+    /* Plaque shape */
+    font-family: 'Pinyon Script', cursive;
+    /* Elegance for "writing" */
+    font-size: 2rem;
     font-weight: bold;
-    letter-spacing: 3px;
-    background: rgba(255, 255, 255, 0.5);
+    letter-spacing: 1px;
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 15px;
+    box-shadow:
+        inset 2px 2px 0 rgba(255, 255, 255, 0.1),
+        inset -2px -2px 0 rgba(0, 0, 0, 0.4),
+        0 8px 20px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    transform: rotate(-1deg);
+    /* Subtle natural tilt */
+}
+
+/* Mobile Adjustments for Date Badge */
+@media (max-width: 600px) {
+    .date-badge {
+        font-size: 1.4rem;
+        padding: 8px 25px;
+    }
 }
 
 .floating-elements {
