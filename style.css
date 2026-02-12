@@ -143,6 +143,66 @@ body {
     transform: rotate(-10deg) scale(1.5);
 }
 
+/* --- IMAGE-BASED CAKE INTRO --- */
+.intro-cake-container {
+    position: relative;
+    width: min(400px, 85vw);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: cakeAppear 1.5s ease-out forwards, floating 4s ease-in-out 1.5s infinite;
+    opacity: 0;
+}
+
+.intro-cake-img {
+    width: 100%;
+    height: auto;
+    /* Apply the SVG filter to remove white background */
+    filter: url(#white-to-transparent) drop-shadow(0 0 30px rgba(255, 182, 193, 0.6));
+}
+
+@keyframes cakeAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* --- MESSAGE CARD OVERLAY --- */
+.message-card {
+    position: relative;
+    margin-top: -30px;
+    /* Overlap slightly with the cake image */
+    background: #fff;
+    padding: 15px 30px;
+    border: 4px solid var(--accent-hot-pink);
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+    width: 260px;
+    animation: cardReveal 1s ease-out 1.5s forwards;
+    opacity: 0;
+    z-index: 10001;
+    text-align: center;
+}
+
 /* Noise overlay for texture */
 .noise-overlay {
     position: fixed;
