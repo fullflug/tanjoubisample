@@ -229,7 +229,9 @@ body {
     height: 60px;
     /* Increased from 40px */
     /* Added height for the base */
-    min-width: 350px;
+    width: 90%;
+    /* Added relative width */
+    max-width: 350px;
     /* Increased from 250px */
     z-index: 5;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -280,7 +282,9 @@ body {
     /* Adjusted from -15px */
     left: 50%;
     transform: translateX(-50%);
-    width: 280px;
+    width: 80%;
+    /* Added relative width */
+    max-width: 280px;
     /* Increased from 200px */
     height: 60px;
     /* Increased from 40px */
@@ -288,6 +292,25 @@ body {
     z-index: 4;
     clip-path: polygon(10% 0, 90% 0, 100% 100%, 90% 70%, 50% 100%, 10% 70%, 0 100%);
     opacity: 0.8;
+}
+
+/* Mobile Adjustments for Ribbon */
+@media screen and (max-width: 480px) {
+    .hero-image-container::before {
+        top: -35px;
+        height: 45px;
+        padding: 5px 20px;
+    }
+
+    .hero-image-container::after {
+        top: -18px;
+        height: 45px;
+    }
+
+    .hero-title {
+        top: -32px;
+        font-size: 1.6rem;
+    }
 }
 
 @keyframes fadeIn {
