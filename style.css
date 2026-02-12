@@ -210,6 +210,8 @@ body {
         0 0 0 12px #fff;
     animation: fadeIn 1.5s ease-out;
     border-radius: 4px;
+    overflow: visible;
+    /* Ensure title and ornaments aren't clipped */
 }
 
 /* Ribbon Ornament */
@@ -229,6 +231,64 @@ body {
     border-radius: 30px;
     border: 2px solid #fff;
     white-space: nowrap;
+    opacity: 0.9;
+}
+
+/* New: Animated Hero Title Overlay */
+.hero-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    font-family: 'Pinyon Script', cursive;
+    font-size: 6rem;
+    /* Large font size */
+    color: #fff;
+    text-shadow:
+        0 0 10px #ff69b4,
+        0 0 20px #ff69b4,
+        0 0 30px #ff1493,
+        0 0 40px #ff1493;
+    z-index: 10;
+    pointer-events: none;
+    margin: 0;
+    animation: sparkle 2s infinite alternate ease-in-out, heroTitleFadeIn 2s ease-out;
+}
+
+@keyframes sparkle {
+    0% {
+        text-shadow:
+            0 0 10px #ff69b4,
+            0 0 20px #ff69b4,
+            0 0 30px #ff1493,
+            0 0 40px #ff1493;
+        transform: translate(-50%, -50%) scale(1);
+        filter: brightness(1);
+    }
+
+    100% {
+        text-shadow:
+            0 0 20px #ff69b4,
+            0 0 40px #ff69b4,
+            0 0 60px #ff1493,
+            0 0 80px #ff1493,
+            0 0 100px #ff1493;
+        transform: translate(-50%, -50%) scale(1.05);
+        filter: brightness(1.2) contrast(1.2);
+    }
+}
+
+@keyframes heroTitleFadeIn {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
 }
 
 /* Ribbon tails */
