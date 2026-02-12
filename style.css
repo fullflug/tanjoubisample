@@ -219,19 +219,24 @@ body {
     content: '';
     /* Removed static text */
     position: absolute;
-    top: -30px;
+    top: -50px;
+    /* Increased from -30px */
     left: 50%;
     transform: translateX(-50%);
     background: var(--accent-hot-pink);
     color: #fff;
-    padding: 5px 30px;
-    height: 40px;
+    padding: 5px 40px;
+    height: 60px;
+    /* Increased from 40px */
     /* Added height for the base */
-    min-width: 250px;
+    min-width: 350px;
+    /* Increased from 250px */
     z-index: 5;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 30px;
-    border: 2px solid #fff;
+    border-radius: 40px;
+    /* Adjusted radius */
+    border: 3px solid #fff;
+    /* Slightly thicker border */
     white-space: nowrap;
     opacity: 0.9;
 }
@@ -239,14 +244,14 @@ body {
 /* Hero Title Overlay (Static, scaled to fit ribbon base) */
 .hero-title {
     position: absolute;
-    top: -28px;
-    /* Slightly adjusted to center in ribbon */
+    top: -46px;
+    /* Adjusted to center in larger ribbon */
     left: 50%;
     transform: translateX(-50%);
     width: auto;
     font-family: 'Pinyon Script', cursive;
-    font-size: 1.6rem;
-    /* Scaled down to fit the ribbon */
+    font-size: 2.4rem;
+    /* Scaled up from 1.6rem */
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     z-index: 10;
@@ -271,11 +276,14 @@ body {
 .hero-image-container::after {
     content: '';
     position: absolute;
-    top: -15px;
+    top: -25px;
+    /* Adjusted from -15px */
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;
-    height: 40px;
+    width: 280px;
+    /* Increased from 200px */
+    height: 60px;
+    /* Increased from 40px */
     background: var(--accent-hot-pink);
     z-index: 4;
     clip-path: polygon(10% 0, 90% 0, 100% 100%, 90% 70%, 50% 100%, 10% 70%, 0 100%);
