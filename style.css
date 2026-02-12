@@ -44,16 +44,29 @@
     padding: 20px;
 }
 
+@keyframes cakeAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
 /* --- CSS 3D CAKE --- */
 .cake-container {
     perspective: 1000px;
     width: 300px;
-    height: 300px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
     animation: cakeAppear 1.5s ease-out forwards;
     opacity: 0;
+    position: relative;
 }
 
 .cake-body {
@@ -88,16 +101,16 @@
 }
 
 .plate {
-    width: 240px;
-    height: 240px;
-    background: #fdfdfd;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, #fff, #f0f0f0);
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -120px;
-    margin-left: -120px;
+    margin-top: -110px;
+    margin-left: -110px;
     border-radius: 50%;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     transform: rotateX(90deg) translateZ(-50px);
 }
 
@@ -114,7 +127,12 @@
 /* Stacked circles to create a cylinder height */
 .layer-bottom {
     transform: rotateX(90deg) translateZ(-40px);
-    background: #eee;
+    background: #fdfdfd;
+}
+
+.l1 {
+    transform: rotateX(90deg) translateZ(-20px);
+    background: #fff;
 }
 
 .layer-middle {
@@ -122,26 +140,15 @@
     background: #fff;
 }
 
+.l2 {
+    transform: rotateX(90deg) translateZ(20px);
+    background: #fff;
+}
+
 .layer-top {
     transform: rotateX(90deg) translateZ(40px);
     background: #fff;
-    box-shadow: inset 0 0 20px rgba(255, 182, 193, 0.3);
-}
-
-/* Cake Side View (The vertical wall) */
-.cake::before {
-    content: '';
-    position: absolute;
-    width: 150px;
-    height: 80px;
-    background: linear-gradient(to bottom, #fff, #f9f9f9);
-    top: 50%;
-    left: 50%;
-    margin-left: -75px;
-    margin-top: -40px;
-    /* This side wall is tricky in pure CSS, we use stacked layers for height instead usually */
-    /* But we can wrap it logic-wise */
-    display: none;
+    box-shadow: inset 0 0 20px rgba(255, 182, 193, 0.2);
 }
 
 /* Toppings: Anchored to the top layer (Z = 40px) */
@@ -150,37 +157,50 @@
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transform: translateZ(45px);
+    transform: translateZ(42px);
     /* On top of the cake */
 }
 
 .strawberry {
     position: absolute;
-    width: 25px;
+    width: 24px;
     height: 30px;
     background: #ff3b3b;
-    border-radius: 50% 50% 40% 40%;
+    border-radius: 50% 50% 45% 45%;
     box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.2);
     transform-style: preserve-3d;
+    transform-origin: center bottom;
+}
+
+.strawberry::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 2px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    box-shadow: 6px 2px 0 #fff, 3px 8px 0 #fff, 9px 12px 0 #fff, 2px 15px 0 #fff;
 }
 
 /* Position strawberries around the circle */
 .s1 {
     top: 20px;
     left: 40px;
-    transform: rotateX(-90deg);
+    transform: rotateX(-90deg) rotateY(10deg);
 }
 
 .s2 {
-    top: 10px;
-    left: 85px;
-    transform: rotateX(-90deg) scale(1.1);
+    top: 5px;
+    left: 75px;
+    transform: rotateX(-90deg) translateX(-50%) scale(1.1);
 }
 
 .s3 {
-    top: 40px;
+    top: 20px;
     left: 110px;
-    transform: rotateX(-90deg) rotateZ(20deg);
+    transform: rotateX(-90deg) rotateY(-10deg);
 }
 
 .cream {
@@ -195,19 +215,19 @@
 
 .c1 {
     top: 60px;
-    left: 20px;
+    left: 15px;
 }
 
 .c2 {
-    top: 30px;
-    left: 70px;
+    top: 40px;
+    left: 65px;
     width: 25px;
     height: 25px;
 }
 
 .c3 {
-    top: 70px;
-    left: 110px;
+    top: 65px;
+    left: 115px;
 }
 
 /* Candles: Anchored to the top layer */
@@ -222,31 +242,33 @@
 .candle {
     position: absolute;
     width: 6px;
-    height: 40px;
+    height: 45px;
     background: repeating-linear-gradient(45deg,
             var(--accent-hot-pink),
             var(--accent-hot-pink) 5px,
             #fff 5px,
             #fff 10px);
     transform-style: preserve-3d;
+    transform-origin: center bottom;
 }
 
 .candle1 {
-    left: 40px;
-    top: 60px;
+    left: 45px;
+    top: 75px;
     transform: rotateX(-90deg);
 }
 
 .candle2 {
-    left: 75px;
-    top: 75px;
+    left: 50%;
+    top: 90px;
+    margin-left: -3px;
     transform: rotateX(-90deg);
-    height: 50px;
+    height: 55px;
 }
 
 .candle3 {
-    left: 110px;
-    top: 60px;
+    left: 105px;
+    top: 75px;
     transform: rotateX(-90deg);
 }
 
