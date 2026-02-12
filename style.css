@@ -229,12 +229,9 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 380px;
-    /* Increased from 280px */
-    height: 180px;
-    /* Increased from 150px */
-    margin: 0 auto -10px;
-    /* Negative margin to pull content up */
+    width: 480px;
+    height: 220px;
+    margin: 0 auto -20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -243,13 +240,12 @@ body {
 
 .section-title {
     font-family: var(--font-en);
-    font-size: 2.5rem;
-    /* Slightly larger text */
+    font-size: 2.8rem;
     color: #fff8e1;
     /* Cream color for readability on chocolate */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 25px !important;
-    padding-bottom: 10px;
+    margin-bottom: 30px !important;
+    padding-bottom: 15px;
     /* Adjusting text position within the frame */
     font-weight: bold;
 }
