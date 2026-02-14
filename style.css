@@ -411,8 +411,8 @@ body {
 }
 
 .message-text {
-    font-size: 1.1rem;
-    line-height: 2.2;
+    font-size: 1.15rem;
+    line-height: 2.0;
 }
 
 .sign {
@@ -435,8 +435,8 @@ body {
 .photo-card {
     width: 150px;
     background: #fff;
-    padding: 10px 10px 30px 10px;
-    /* Polaroid style */
+    padding: 10px 10px 45px 10px;
+    /* Polaroid style - increased bottom padding for caption space */
     color: #000;
     position: relative;
     transition: transform 0.3s;
@@ -654,7 +654,7 @@ body {
 .handwritten {
     font-family: 'Noto Sans JP', sans-serif;
     position: absolute;
-    bottom: 5px;
+    bottom: 8px;
     width: 100%;
     text-align: center;
     left: 0;
