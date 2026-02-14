@@ -658,7 +658,9 @@ body {
     width: 100%;
     text-align: center;
     left: 0;
-    font-size: 1.2rem;
+    font-size: 0.75rem;
+    padding: 0 5px;
+    line-height: 1.2;
 }
 
 .skew-left {
